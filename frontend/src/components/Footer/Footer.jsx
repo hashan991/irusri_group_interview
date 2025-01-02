@@ -7,11 +7,11 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 
 const Footer = () => {
   return (
-    <Box sx={{ backgroundColor: "#2c003e", color: "white", py: 4, px: 2 }}>
+    <Box sx={{ backgroundColor: "#2c003e", color: "white", py: 8, px: 4 }}>
       <Grid container spacing={4}>
         {/* Social Media Section */}
         <Grid item xs={12} sm={6} md={3}>
-          <Box sx={{ textAlign: "left" }}>
+          <Box>
             <Box sx={{ display: "flex", gap: 1, mb: 2 }}>
               <IconButton sx={{ color: "white" }}>
                 <FacebookIcon />
@@ -26,7 +26,10 @@ const Footer = () => {
                 <YouTubeIcon />
               </IconButton>
             </Box>
-            <Typography variant="body2" sx={{ color: "gray" }}>
+            <Typography
+              variant="body2"
+              sx={{ color: "gray", fontSize: "0.9rem" }}
+            >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Typography>
@@ -38,34 +41,23 @@ const Footer = () => {
           <Typography variant="h6" sx={{ mb: 2 }}>
             Quick Links
           </Typography>
-          <Link
-            href="#"
-            underline="hover"
-            sx={{ color: "white", display: "block", mb: 1 }}
-          >
-            Submit Article
-          </Link>
-          <Link
-            href="#"
-            underline="hover"
-            sx={{ color: "white", display: "block", mb: 1 }}
-          >
-            Blog
-          </Link>
-          <Link
-            href="#"
-            underline="hover"
-            sx={{ color: "white", display: "block", mb: 1 }}
-          >
-            Freebies
-          </Link>
-          <Link
-            href="#"
-            underline="hover"
-            sx={{ color: "white", display: "block", mb: 1 }}
-          >
-            Pricing
-          </Link>
+          {["Submit Article", "Blog", "Freebies", "Pricing"].map(
+            (link, index) => (
+              <Link
+                href="#"
+                underline="hover"
+                sx={{
+                  color: "white",
+                  display: "block",
+                  mb: 1,
+                  fontSize: "0.9rem",
+                }}
+                key={index}
+              >
+                {link}
+              </Link>
+            )
+          )}
         </Grid>
 
         {/* Contact Us Section */}
@@ -75,7 +67,7 @@ const Footer = () => {
           </Typography>
           <Typography
             variant="body2"
-            sx={{ display: "flex", alignItems: "center", mb: 1 }}
+            sx={{ display: "flex", alignItems: "center", mb: 2 }}
           >
             <Box
               sx={{
@@ -85,7 +77,7 @@ const Footer = () => {
                 backgroundColor: "white",
                 mr: 1,
               }}
-            ></Box>
+            />
             (888) 231 4522 258
           </Typography>
           <Typography
@@ -100,7 +92,7 @@ const Footer = () => {
                 backgroundColor: "white",
                 mr: 1,
               }}
-            ></Box>
+            />
             3129 Doctors Drive, Los Angeles California, USA
           </Typography>
         </Grid>
@@ -110,32 +102,42 @@ const Footer = () => {
           <Typography variant="h6" sx={{ mb: 2 }}>
             Gallery Showcase
           </Typography>
-          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <Box
-                key={item}
-                sx={{
-                  width: "60px",
-                  height: "60px",
-                  backgroundColor: "gray",
-                  borderRadius: 1,
-                  overflow: "hidden",
-                }}
-              >
-                <img
-                  src={`https://via.placeholder.com/60`}
-                  alt={`Gallery ${item}`}
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                />
-              </Box>
+          <Grid container spacing={2}>
+            {[1, 2, 3, 4, 5, 6].map((item, index) => (
+              <Grid item xs={4} key={index}>
+                <Box
+                  sx={{
+                    width: "100%",
+                    height: "80px",
+                    borderRadius: 1,
+                    overflow: "hidden",
+                    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+                  }}
+                >
+                  <img
+                    src={`https://via.placeholder.com/150?text=Image+${item}`}
+                    alt={`Gallery ${item}`}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                </Box>
+              </Grid>
             ))}
-          </Box>
+          </Grid>
         </Grid>
       </Grid>
 
       {/* Footer Bottom Line */}
       <Box
-        sx={{ mt: 4, borderTop: "1px solid gray", pt: 2, textAlign: "center" }}
+        sx={{
+          mt: 4,
+          borderTop: "1px solid gray",
+          pt: 2,
+          textAlign: "center",
+        }}
       >
         <Typography variant="body2" sx={{ color: "gray" }}>
           © 2023 Your Company. All rights reserved.

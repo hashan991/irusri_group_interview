@@ -7,10 +7,7 @@ import { Box } from "@mui/material";
 
 const App = () => {
   return (
-    <Box
-      
-    >
-      <Navbar />
+    <Box>
       <Hero />
       <HowItWorks />
       <Footer />

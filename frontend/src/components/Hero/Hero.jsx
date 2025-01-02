@@ -10,6 +10,8 @@ import {
   ToggleButton,
   ToggleButtonGroup,
 } from "@mui/material";
+import Navbar from "../Navbar/Navbar";
+import SearchIcon from "@mui/icons-material/Search";
 
 const Hero = () => {
   const [passengers, setPassengers] = useState(1); // State for passenger count
@@ -36,16 +38,16 @@ const Hero = () => {
     <Box
       sx={{
         position: "relative",
-        backgroundImage: `url(${pngwing4})`,
+        backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0)), url(${pngwing4})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         color: "white",
-        py: { xs: 1, md: 1 }, // Adjust padding for mobile and desktop
-        px: 1,
+        // height: "100vh", // Adjust height as needed
       }}
     >
+      <Navbar />
       {/* Hero Text */}
-      <Box sx={{ mb: 6, textAlign: { xs: "center", md: "left" } }}>
+      <Box sx={{ mb: 6, ml: 5, textAlign: { xs: "center", md: "left" } }}>
         <Typography
           variant="h3"
           sx={{
@@ -73,13 +75,38 @@ const Hero = () => {
         </Typography>
         <Button
           variant="contained"
+          endIcon={
+            <Box
+              sx={{
+                width: 24,
+                height: 24,
+                backgroundColor: "white",
+                borderRadius: "50%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Box
+                component="span"
+                sx={{
+                  fontSize: 16,
+                  color: "#C2175B",
+                  transform: "rotate(45deg)", // Rotate the arrow
+                  display: "inline-block",
+                }}
+              >
+                ➤
+              </Box>
+            </Box>
+          }
           sx={{
             backgroundColor: "#C2175B",
             color: "white",
             px: 4,
             py: 1,
             fontWeight: "bold",
-            borderRadius: 2,
+            borderRadius: 10,
             textTransform: "none",
             fontSize: "1rem",
             mb: -20,
@@ -107,7 +134,7 @@ const Hero = () => {
           sx={{
             display: "flex",
             justifyContent: "center",
-            gap: 2,
+            //gap: 2,
             //mb: 3, // Adjust spacing between buttons and the search form
           }}
         >
@@ -115,13 +142,12 @@ const Hero = () => {
             variant={classType === "business" ? "contained" : "outlined"}
             onClick={() => setClassType("business")}
             sx={{
-              px: 4,
+              px: 8,
               fontWeight: "bold",
-              borderRadius: 0,
+              borderRadius: "15px 15px 0 0",
               backgroundColor:
-                classType === "business" ? "#C2175B" : "transparent",
-              color: classType === "business" ? "white" : "gray",
-              borderColor: "#C2175B",
+                classType === "business" ? "#C2175B" : "rgb(139, 137, 137)",
+              color: classType === "business" ? "white" : "white",
               textTransform: "none",
               "&:hover": {
                 backgroundColor:
@@ -136,17 +162,19 @@ const Hero = () => {
             variant={classType === "first" ? "contained" : "outlined"}
             onClick={() => setClassType("first")}
             sx={{
-              px: 4,
+              ml: -2,
+              px: 9,
               fontWeight: "bold",
-              borderRadius: 0,
+              borderRadius: "15px 15px 0 0",
               backgroundColor:
-                classType === "first" ? "#C2175B" : "transparent",
-              color: classType === "first" ? "white" : "gray",
-              borderColor: "#C2175B",
+                classType === "first" ? "#C2175B" : "rgb(139, 137, 137)",
+              color: classType === "first" ? "white" : "white",
               textTransform: "none",
               "&:hover": {
                 backgroundColor:
-                  classType === "first" ? "#C2175B" : "transparent",
+                  classType === "first"
+                    ? "#C2175B"
+                    : "rgba(222, 207, 207, 0.6)",
                 borderColor: "#C2175B",
               },
             }}
@@ -156,14 +184,16 @@ const Hero = () => {
         </Box>
         <Box
           sx={{
+            px: 200,
             // position: "relative",
             backgroundColor: "white",
-            borderRadius: 2,
+            borderRadius: 10,
             boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
             p: { xs: 2, md: 3 }, // Adjust padding for mobile and desktop
             maxWidth: "1000px",
             mx: "auto",
             bottom: "-100px",
+           
           }}
         >
           {/* Trip Type Buttons */}
@@ -313,8 +343,24 @@ const Hero = () => {
           <Box sx={{ mt: 3, textAlign: "center" }}>
             <Button
               variant="contained"
+              endIcon={
+                <Box
+                  sx={{
+                    width: 32,
+                    height: 32,
+                    backgroundColor: "white",
+                    borderRadius: "50%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <SearchIcon sx={{ color: "#C2175B", fontSize: 20 }} />
+                </Box>
+              }
               sx={{
                 backgroundColor: "#C2175B",
+                borderRadius: 10,
                 color: "white",
                 py: 1,
                 px: 4,
