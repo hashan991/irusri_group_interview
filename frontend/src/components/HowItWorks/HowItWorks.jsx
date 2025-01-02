@@ -12,7 +12,7 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <Box sx={{ py: 8, px: 4, backgroundColor: "#f9f9f9" }}>
+    <Box sx={{ py: 15, px: 9, backgroundColor: "#f9f9f9" }}>
       <Typography
         variant="h4"
         sx={{
@@ -153,7 +153,6 @@ const HowItWorks = () => {
                   left: "-10px",
                   color: "#C2175B",
                   fontSize: 24,
-                 
                 }}
               />
             </Box>
@@ -170,7 +169,6 @@ const HowItWorks = () => {
               borderRadius: 2,
               overflow: "hidden",
               boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-              ml: -10,
             }}
           >
             <img

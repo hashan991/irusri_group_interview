@@ -189,11 +189,12 @@ const Hero = () => {
             backgroundColor: "white",
             borderRadius: 10,
             boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-            p: { xs: 2, md: 3 }, // Adjust padding for mobile and desktop
+            p: { xs: 5, md: 6 }, // Adjust padding for mobile and desktop
             maxWidth: "1000px",
             mx: "auto",
             bottom: "-100px",
-           
+            
+            
           }}
         >
           {/* Trip Type Buttons */}
@@ -340,35 +341,35 @@ const Hero = () => {
           </Grid>
 
           {/* Search Button */}
-          <Box sx={{ mt: 3, textAlign: "center" }}>
-            <Button
-              variant="contained"
-              endIcon={
-                <Box
-                  sx={{
-                    width: 32,
-                    height: 32,
-                    backgroundColor: "white",
-                    borderRadius: "50%",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <SearchIcon sx={{ color: "#C2175B", fontSize: 20 }} />
-                </Box>
-              }
-              sx={{
-                backgroundColor: "#C2175B",
-                borderRadius: 10,
-                color: "white",
-                py: 1,
-                px: 4,
-              }}
-            >
-              Search Flight
-            </Button>
-          </Box>
+        </Box>
+        <Box sx={{ mt: -3, textAlign: "center" }}>
+          <Button
+            variant="contained"
+            endIcon={
+              <Box
+                sx={{
+                  width: 32,
+                  height: 32,
+                  backgroundColor: "white",
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <SearchIcon sx={{ color: "#C2175B", fontSize: 20 }} />
+              </Box>
+            }
+            sx={{
+              backgroundColor: "#C2175B",
+              borderRadius: 10,
+              color: "white",
+              py: 1,
+              px: 4,
+            }}
+          >
+            Search Flight
+          </Button>
         </Box>
       </Box>
     </Box>
