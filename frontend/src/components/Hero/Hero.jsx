@@ -17,6 +17,8 @@ const Hero = () => {
   const [passengers, setPassengers] = useState(1); // State for passenger count
   const [tripType, setTripType] = useState("one-way"); // State for trip type
   const [classType, setClassType] = useState("business"); // State for class type
+  const [departureCity, setDepartureCity] = useState(""); // State for departure city
+  const [arrivalCity, setArrivalCity] = useState(""); // State for arrival city
 
   const handlePassengerChange = (event) => {
     setPassengers(event.target.value);
@@ -33,6 +35,21 @@ const Hero = () => {
       setClassType(newClassType);
     }
   };
+  const handleDepartureCityChange = (event) => {
+    setDepartureCity(event.target.value);
+  };
+
+  const handleArrivalCityChange = (event) => {
+    setArrivalCity(event.target.value);
+  };
+
+  const cities = [
+    { code: "NYC", name: "New York City" },
+    { code: "LAX", name: "Los Angeles" },
+    { code: "CHI", name: "Chicago" },
+    { code: "HOU", name: "Houston" },
+    { code: "MIA", name: "Miami" },
+  ];
 
   return (
     <Box
@@ -193,8 +210,6 @@ const Hero = () => {
             maxWidth: "1000px",
             mx: "auto",
             bottom: "-100px",
-            
-            
           }}
         >
           {/* Trip Type Buttons */}
@@ -277,23 +292,44 @@ const Hero = () => {
           >
             <Grid item xs={12} sm={6} md={2}>
               <TextField
+                select
                 label="Departure City"
+                InputLabelProps={{ shrink: true }}
+                value={departureCity}
+                onChange={handleDepartureCityChange}
                 fullWidth
                 sx={{
                   "& .MuiInputBase-root": { fontSize: "0.9rem" },
                   "& .MuiInputLabel-root": { fontSize: "0.9rem" },
                 }}
-              />
+              >
+                {cities.map((city) => (
+                  <MenuItem key={city.code} value={city.code}>
+                    {city.name}
+                  </MenuItem>
+                ))}
+              </TextField>
             </Grid>
             <Grid item xs={12} sm={6} md={2}>
               <TextField
+                select
                 label="Arrival City"
+                InputLabelProps={{ shrink: true }}
+                value={arrivalCity}
+                onChange={handleArrivalCityChange}
                 fullWidth
                 sx={{
                   "& .MuiInputBase-root": { fontSize: "0.9rem" },
                   "& .MuiInputLabel-root": { fontSize: "0.9rem" },
+                  
                 }}
-              />
+              >
+                {cities.map((city) => (
+                  <MenuItem key={city.code} value={city.code}>
+                    {city.name}
+                  </MenuItem>
+                ))}
+              </TextField>
             </Grid>
             <Grid item xs={12} sm={6} md={2}>
               <TextField

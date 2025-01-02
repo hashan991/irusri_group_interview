@@ -1,4 +1,6 @@
 import React from "react";
+import planeLogo from "../../assets/images/plane.png";
+
 import {
   AppBar,
   Toolbar,
@@ -63,8 +65,7 @@ const Navbar = () => {
             >
               <Box
                 component="img"
-                src="/path/to/logo.png" // Replace with your logo path
-                alt="Logo"
+                src={planeLogo} // Adjust the relative path
                 sx={{ height: 30 }}
               />
             </Typography>
@@ -81,7 +82,8 @@ const Navbar = () => {
               >
                 <Box
                   component="img"
-                  src="/path/to/logo.png" // Replace with your logo path
+                  src={planeLogo} // Adjust the relative path
+                  // Replace with your logo path
                   alt="Logo"
                   sx={{ height: 30 }}
                 />

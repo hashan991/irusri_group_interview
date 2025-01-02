@@ -12,7 +12,7 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <Box sx={{ py: 15, px: 9, backgroundColor: "#f9f9f9" }}>
+    <Box sx={{ py: 15, px: 9, backgroundColor: "#f9f9f9", pt: 40 }}>
       <Typography
         variant="h4"
         sx={{
@@ -33,7 +33,8 @@ const HowItWorks = () => {
         }}
       >
         These are the simple procedures that will make your purchasing process
-        super easy and smooth. And will help you to get your flight easily.
+        super easy <br />
+        and smooth. And will help you to get your flight easily.
       </Typography>
 
       <Grid container spacing={4} alignItems="center">
@@ -160,6 +161,7 @@ const HowItWorks = () => {
         </Grid>
 
         {/* Right Side: Video Section */}
+        {/* Right Side: Video Section */}
         <Grid item xs={12} md={6}>
           <Box
             sx={{
@@ -171,11 +173,16 @@ const HowItWorks = () => {
               boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
             }}
           >
-            <img
-              src="https://via.placeholder.com/600x400" // Replace with your actual video thumbnail URL
-              alt="How it Works Video"
+            {/* Video Player */}
+            <video
+              src={require("../../assets/images/video1.mp4")} // Path to your video
+              controls
               style={{ width: "100%", height: "auto", display: "block" }}
-            />
+            >
+              Your browser does not support the video tag.
+            </video>
+
+            {/* Optional Play Button Overlay */}
             <Box
               sx={{
                 position: "absolute",
