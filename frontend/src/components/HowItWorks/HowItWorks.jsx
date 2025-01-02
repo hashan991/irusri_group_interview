@@ -38,7 +38,7 @@ const HowItWorks = () => {
       </Typography>
 
       <Grid container spacing={4} alignItems="center">
-        {/* Left Side: Steps */}
+       
         <Grid item xs={12} md={6}>
           <Box sx={{ position: "relative", height: "100%" }}>
             {steps.map((step, index) => (
@@ -52,7 +52,7 @@ const HowItWorks = () => {
                   ml: 8,
                 }}
               >
-                {/* Large Numbers in the Background */}
+               
                 <Typography
                   variant="h1"
                   sx={{
@@ -67,7 +67,7 @@ const HowItWorks = () => {
                   {step.id}
                 </Typography>
 
-                {/* Black Circle */}
+               
                 <Box
                   sx={{
                     width: 40,
@@ -78,7 +78,7 @@ const HowItWorks = () => {
                   }}
                 ></Box>
 
-                {/* Step Title */}
+               
                 <Typography
                   variant="h6"
                   sx={{
@@ -92,7 +92,7 @@ const HowItWorks = () => {
               </Box>
             ))}
 
-            {/* Dotted Line */}
+           
             <Box
               sx={{
                 position: "absolute",
@@ -104,7 +104,7 @@ const HowItWorks = () => {
                 ml: -1,
               }}
             >
-              {/* First Dot */}
+             
               <Box
                 sx={{
                   position: "absolute",
@@ -118,7 +118,7 @@ const HowItWorks = () => {
                 }}
               />
 
-              {/* Second Dot */}
+              
               <Box
                 sx={{
                   position: "absolute",
@@ -132,7 +132,7 @@ const HowItWorks = () => {
                 }}
               />
 
-              {/* Third Dot */}
+             
               <Box
                 sx={{
                   position: "absolute",
@@ -160,8 +160,8 @@ const HowItWorks = () => {
           </Box>
         </Grid>
 
-        {/* Right Side: Video Section */}
-        {/* Right Side: Video Section */}
+       
+        {/* Video Section */}
         <Grid item xs={12} md={6}>
           <Box
             sx={{
@@ -173,9 +173,9 @@ const HowItWorks = () => {
               boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
             }}
           >
-            {/* Video Player */}
+           
             <video
-              src={require("../../assets/images/video1.mp4")} // Path to your video
+              src={require("../../assets/images/video1.mp4")} 
               controls
               style={{ width: "100%", height: "auto", display: "block" }}
             >

@@ -14,11 +14,11 @@ import Navbar from "../Navbar/Navbar";
 import SearchIcon from "@mui/icons-material/Search";
 
 const Hero = () => {
-  const [passengers, setPassengers] = useState(1); // State for passenger count
-  const [tripType, setTripType] = useState("one-way"); // State for trip type
-  const [classType, setClassType] = useState("business"); // State for class type
-  const [departureCity, setDepartureCity] = useState(""); // State for departure city
-  const [arrivalCity, setArrivalCity] = useState(""); // State for arrival city
+  const [passengers, setPassengers] = useState(1); 
+  const [tripType, setTripType] = useState("one-way"); 
+  const [classType, setClassType] = useState("business"); 
+  const [departureCity, setDepartureCity] = useState(""); 
+  const [arrivalCity, setArrivalCity] = useState(""); 
 
   const handlePassengerChange = (event) => {
     setPassengers(event.target.value);
@@ -59,7 +59,7 @@ const Hero = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         color: "white",
-        // height: "100vh", // Adjust height as needed
+       
       }}
     >
       <Navbar />
@@ -137,12 +137,6 @@ const Hero = () => {
       <Box
         sx={{
           position: "relative",
-          // backgroundColor: "white",
-          // borderRadius: 2,
-          //boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-          //p: { xs: 2, md: 3 }, // Adjust padding for mobile and desktop
-          // maxWidth: "1000px",
-          //mx: "auto",
           bottom: "-100px",
         }}
       >
@@ -151,8 +145,6 @@ const Hero = () => {
           sx={{
             display: "flex",
             justifyContent: "center",
-            //gap: 2,
-            //mb: 3, // Adjust spacing between buttons and the search form
           }}
         >
           <Button
@@ -202,11 +194,10 @@ const Hero = () => {
         <Box
           sx={{
             px: 200,
-            // position: "relative",
             backgroundColor: "white",
             borderRadius: 10,
             boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-            p: { xs: 5, md: 6 }, // Adjust padding for mobile and desktop
+            p: { xs: 5, md: 6 }, 
             maxWidth: "1000px",
             mx: "auto",
             bottom: "-100px",
@@ -321,7 +312,6 @@ const Hero = () => {
                 sx={{
                   "& .MuiInputBase-root": { fontSize: "0.9rem" },
                   "& .MuiInputLabel-root": { fontSize: "0.9rem" },
-                  
                 }}
               >
                 {cities.map((city) => (

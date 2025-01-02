@@ -31,10 +31,10 @@ const Navbar = () => {
     <AppBar
       position="static"
       sx={{
-        backgroundColor: "rgba(0, 0, 0, 0.5)", // Transparent black background
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
         color: "white",
         px: 2,
-        boxShadow: "none", // Remove default AppBar shadow
+        boxShadow: "none", 
       }}
     >
       <Toolbar
@@ -46,7 +46,7 @@ const Navbar = () => {
       >
         {isMobile ? (
           <>
-            {/* Mobile: Menu Button on the Left */}
+            {/* Mobile: Menu Button  */}
             <IconButton
               onClick={toggleDrawer(true)}
               sx={{ color: "white", mr: "auto" }}
@@ -54,7 +54,7 @@ const Navbar = () => {
               <MenuIcon />
             </IconButton>
 
-            {/* Centered Logo */}
+           
             <Typography
               variant="h6"
               component="div"
@@ -65,15 +65,15 @@ const Navbar = () => {
             >
               <Box
                 component="img"
-                src={planeLogo} // Adjust the relative path
+                src={planeLogo} 
                 sx={{ height: 30 }}
               />
             </Typography>
           </>
         ) : (
-          // Desktop: Logo + Navigation
+          
           <>
-            {/* Left Section: Logo + Buttons */}
+            {/* Logo + Buttons */}
             <Box sx={{ display: "flex", alignItems: "center", gap: 3 }}>
               <Typography
                 variant="h6"
@@ -82,8 +82,8 @@ const Navbar = () => {
               >
                 <Box
                   component="img"
-                  src={planeLogo} // Adjust the relative path
-                  // Replace with your logo path
+                  src={planeLogo} 
+                  
                   alt="Logo"
                   sx={{ height: 30 }}
                 />
@@ -104,7 +104,7 @@ const Navbar = () => {
               </Box>
             </Box>
 
-            {/* Right Section: Search + Authentication */}
+            {/*  Search + Authentication */}
             <Box
               sx={{
                 display: "flex",
@@ -112,7 +112,7 @@ const Navbar = () => {
                 gap: 3,
               }}
             >
-              {/* Search Bar */}
+             
               <Box
                 sx={{
                   display: "flex",
@@ -132,7 +132,7 @@ const Navbar = () => {
                 </IconButton>
               </Box>
 
-              {/* Authentication Links */}
+              
               <Box sx={{ display: "flex", gap: 3 }}>
                 <Typography variant="body1" sx={{ cursor: "pointer" }}>
                   Sign In
@@ -146,7 +146,7 @@ const Navbar = () => {
         )}
       </Toolbar>
 
-      {/* Drawer for Mobile Navigation */}
+     
       <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
         <Box
           sx={{
